@@ -6,7 +6,6 @@
 '''
 
 s = [int(i) for i in input().split()]
-n = 1
 m = 0
 j = 1
 str1 = ''
@@ -15,21 +14,16 @@ if len(s) == 2:
     if s[m] == s[j]:
         str1 += str(s[m])
 elif len(s) > 2:
-    while len(s) > n:
+    while len(s) > j:
         if s[m] != s[j]:
-            n += 1
             m += 1
             j += 1
         elif s[m] == s[j]:
             while s[m] == s[j] and s[j] != len(s) - 1:
                 if j >= len(s) - 1:
-                    # str1 += str(s[m])
-                    n = len(s)
                     break
                 j += 1
-                n += 1
                 if j >= len(s) - 1:
-                    n = len(s)
                     break
             str1 += str(s[m])
             m = j
@@ -37,9 +31,7 @@ elif len(s) > 2:
             if j < len(s):
                 str1 += " "
             if j > len(s) - 1:
-                n = len(s)
                 break
-            n += 1
 print(str1)
 '''
 Напишите программу, на вход которой подаётся список чисел одной строкой.
